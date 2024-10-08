@@ -36,7 +36,7 @@ jobs:
       - name: Scan repo with semgrep
         run: |
           semgrep scan --config auto --text
-          semgrep scan --config auto --sarif > semgrep.sarif
+          semgrep scan --config auto --sarif >semgrep.sarif 2>/dev/null
       - name: Upload SARIF file for GitHub Advanced Security Dashboard
         uses: github/codeql-action/upload-sarif@v3
         with:
