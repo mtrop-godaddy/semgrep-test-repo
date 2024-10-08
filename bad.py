@@ -1,5 +1,7 @@
 import os
 
+secret = "^IUhegeh957AEgf$^Aujeghnwe0283t2hyg0wdfhbsudb2409UHY4T9479(&y$t0H0h8"
+
 # Vulnerable
 user_input = input('What do you want to grep for?\n')
 os.system("grep -R {} .".format(user_input))
@@ -12,4 +14,4 @@ os.popen("ls -l " + user_input)
 subprocess.call('echo $HOME', shell=True)
 
 # throws an error
-subprocess.call('echo $HOME', shell=False)
+subprocess.call('echo {} $HOME'.format(secret), shell=False)
